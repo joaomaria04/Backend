@@ -80,5 +80,11 @@ function operadores(num1, num2, operador) {
 operadores(2,2,"^");
 
 function multiplos_de_5() {
-
+    for (var i = 1; i < 20; i++) {
+        if (i % 5 == 0) {
+            console.log(i);
+        }
+    }
 }
+
+multiplos_de_5();
