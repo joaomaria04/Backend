@@ -11,7 +11,7 @@ function notas() {
     }
 }
 
-notas();
+//notas();
 
 // Ex 6
 
@@ -56,7 +56,7 @@ function imprimir_mes(mes) {
         }
 }
 
-imprimir_mes(1);
+//imprimir_mes(1);
 
 //Ex 7
 
@@ -77,7 +77,10 @@ function operadores(num1, num2, operador) {
         console.log("O "+num1+ " elevado a "+num2+" é: " , num1+num2);
     }
 }
-operadores(2,2,"^");
+
+//operadores(2,2,"^");
+
+//Ex 8
 
 function multiplos_de_5() {
     for (var i = 1; i < 20; i++) {
@@ -87,4 +90,34 @@ function multiplos_de_5() {
     }
 }
 
-multiplos_de_5();
+//multiplos_de_5();
+
+//Ex 9
+
+function primeiros_100() {
+
+    for (var i = 0; i <= 100; i++) {
+        console.log("\n",i+i);
+    }
+
+}
+
+//primeiros_100();
+
+//Ex 10
+
+function factorial(numero){
+    var resultado = 1;
+    for (var i = 1; i <= numero; i++) {
+        resultado *= i;
+        console.log(resultado);
+    }
+}
+
+//factorial(5);
+
+//Ex 11
+
+function sequencia_numeros() {
+    
+}
