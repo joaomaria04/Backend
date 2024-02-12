@@ -85,27 +85,25 @@ function operadores(num1, num2, operador) {
 
 //Ex 8
 
-function multiplos_de_5() {
-    for (var i = 1; i < 20; i++) {
-        if (i % 5 == 0) {
+function multiplos_de_5(value, limit) {
+    for (var i = value; i <= limit; i+=value) {
             console.log(i);
-        }
     }
 }
 
-//multiplos_de_5();
+multiplos_de_5(5, 20);
 
 //Ex 9
 
-function primeiros_100() {
-
-    for (var i = 0; i <= 100; i++) {
-        console.log("\n",i+i);
+function primeiros_100(n) {
+    soma = 0;
+    for (var i = 1; i <= n; i++) {
+        soma += i;
     }
-
+    return soma
 }
 
-//primeiros_100();
+console.log(primeiros_100(100));
 
 //Ex 10
 
@@ -122,10 +120,37 @@ function factorial(numero){
 //Ex 11
 
 function maximo(numeros) {
-    var resultado = [];
+    resultado = numeros[0];
     for (var i = 0; i < numeros.length; i++) {
-        for (var j = 0; j < i; j++) {
-            
+        if (numeros[i] > resultado) {
+            resultado = numeros[i];
         }
     }
+    console.log(resultado);
 }
+
+//maximo([1,2,3,4,5]);
+
+
+function minimo(numeros) {
+    resultado = numeros[0];
+    for (var i = 0; i < numeros.length; i++) {
+        if (numeros[i] < resultado) {
+            resultado = numeros[i];
+        }
+    }
+    console.log(resultado);
+}
+
+//minimo([-1,1,2,3,4,5]);
+
+function media(numeros) {
+    resultado = 0;
+    for (var i = 0; i < numeros.length; i++) {
+        resultado += numeros[i];
+    }
+    resultado /= numeros.length;
+    console.log(resultado);
+}
+
+media([1,2,3,4,5]);
