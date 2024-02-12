@@ -53,6 +53,9 @@ function imprimir_mes(mes) {
         case 12:
             console.log("Dezembro");
             break;         
+        default:
+            console.log("Valor inválido");
+            break;
         }
 }
 
@@ -118,6 +121,11 @@ function factorial(numero){
 
 //Ex 11
 
-function sequencia_numeros() {
-    
+function maximo(numeros) {
+    var resultado = [];
+    for (var i = 0; i < numeros.length; i++) {
+        for (var j = 0; j < i; j++) {
+            
+        }
+    }
 }
