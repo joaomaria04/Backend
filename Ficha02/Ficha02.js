@@ -26,4 +26,21 @@ function vogais(frase) {
     console.log(contador);
 }
 
-vogais("America e irao");
+//vogais("America e irao");
+
+function frase_letra(frase, letra) {
+    numero_letra = 0;
+    for (var i = 0; i < frase.length; i++) {
+        if (letra == frase[i].toLowerCase()) {
+            numero_letra++;
+        }
+    }
+    console.log("O número de vezes que a letra se repete é: " + numero_letra);
+}
+
+//frase_letra("Natal E presentes", "e")
+
+function tempo_trabalho(hora_entrada, hora_saida) {
+   
+}
+
