@@ -40,7 +40,46 @@ function frase_letra(frase, letra) {
 
 //frase_letra("Natal E presentes", "e")
 
+/*
+
 function tempo_trabalho(hora_entrada, hora_saida) {
    
 }
 
+*/
+
+function retangulo(altura, largura) {
+    for (var i = 0; i < altura; i++) {
+        var linha = "";
+        for (var j = 0; j < largura; j++) {
+            linha+= "*";
+        }
+        console.log(linha);
+    }
+}
+
+//retangulo(5,10);
+
+function triangulo(altura) {
+    var controlo = "";
+    for (var i = 0; i < altura; i++) {
+        controlo+= "*";
+        console.log(controlo);
+    }
+    
+}
+
+//triangulo(10);
+
+function caixa(lado) {
+    var inicio = "";
+    var fim = "";
+    for (var i = 0; i < lado; i++) {
+        inicio += "*";
+        console.log("*");
+        fim += "*";
+    }
+    console.log(inicio);
+}
+
+caixa(10);
