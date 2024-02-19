@@ -16,11 +16,11 @@ function frase_inversa(frase) {
         }
         stringReversa += " ";
     }
-    console.log(stringReversa);
+    return stringReversa;
 
 }
 
-frase_inversa("Hoje é Domingo");
+//console.log(frase_inversa("Hoje é Domingo"));
 
 function vogais(frase) {
     var contador = 0;
@@ -29,10 +29,10 @@ function vogais(frase) {
             contador++;
         }
     }
-    console.log(contador);
+    return contador;
 }
 
-//vogais("America e irao");
+//console.log(vogais("America e irao"));
 
 function frase_letra(frase, letra) {
     numero_letra = 0;
