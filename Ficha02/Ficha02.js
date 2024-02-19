@@ -6,15 +6,21 @@ function imc(peso, altura) {
 //imc(60, 1.60)
 
 function frase_inversa(frase) {
-    var frase_invertida = "";   
-    for (var i = frase.length - 1; i >= 0; i--) {
-        frase_invertida += frase[i];
+    var stringReversa = "";
+    var palavras = frase.split(" ");   
+    for (var i = 0; i < palavras.length; i++) {
+        var palavra = palavras[i];
+        for (var j = palavra.length - 1; j >= 0; j--){
+            var letra = palavra[j];
+            stringReversa += letra;
+        }
+        stringReversa += " ";
     }
-    console.log(frase_invertida);
+    console.log(stringReversa);
 
 }
 
-//frase_inversa("Hoje e Domingo");
+frase_inversa("Hoje é Domingo");
 
 function vogais(frase) {
     var contador = 0;
