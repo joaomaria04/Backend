@@ -114,8 +114,8 @@ function listaEstudantes(students){
 
     var melhorNota = students[0];
     for (var j = 1; j < students.length; j++) {
-        const nota = students[j];
-        if (nota > melhorNota.grade) {
+        var nota = students[j];
+        if (nota > melhorNota.media) {
             melhorNota = students[j];
         }   
     }
@@ -133,8 +133,8 @@ function listaEstudantes(students){
 
 
     var countNegativas = 0;
-    for (var k = 0; k < students.length; k++) {
-        if (students[k].media < 9.5) {
+    for (var l = 0; l < students.length; l++) {
+        if (students[l].media < 9.5) {
             countNegativas++;
         }
     
