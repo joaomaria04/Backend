@@ -122,15 +122,24 @@ function listaEstudantes(students){
     console.log("O melhor aluno tem o número "+melhorNota.numero+ " e média " + melhorNota.media);
     
 
-    var count = 0;
+    var countPositivas = 0;
     for (var k = 0; k < students.length; k++) {
         if (students[k].media > 9.5) {
-            count++;
+            countPositivas++;
         }
     
     }
-console.log("A turma tem "+ count + " positivas");
+    console.log("A turma tem "+ countPositivas + " positivas");
 
+
+    var countNegativas = 0;
+    for (var k = 0; k < students.length; k++) {
+        if (students[k].media < 9.5) {
+            countNegativas++;
+        }
+    
+    }
+console.log("A turma tem "+ countNegativas + " positivas");
 
 }
 
