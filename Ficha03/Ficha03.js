@@ -19,3 +19,4 @@ function performDownload(started, update, completed) {
 }
 
 performDownload(started, update, completed);
+
