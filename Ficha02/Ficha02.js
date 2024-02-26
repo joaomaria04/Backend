@@ -95,7 +95,7 @@ function caixa(altura, largura) {
 
     var students = [];
     var estudante1 = {nome: "Juan Pablo", numero: 20070, media: 17};
-    var estudante2 = {nome: "Mateus Fernandes", numero: 12350, media: 11};
+    var estudante2 = {nome: "Mateus Fernandes", numero: 12350, media: 9};
     var estudante3 = {nome: "Rodrigo Ribeiro", numero: 80970, media: 12};
     var estudante4 = {nome: "Pedro Matias", numero: 22230, media: 18};
     var estudante5 = {nome: "Gonçalo Freitas", numero: 21270, media: 15};
@@ -112,15 +112,26 @@ function listaEstudantes(students){
       console.log("O aluno "+ s.nome + ", número " + s.numero + " tem a média de " + s.media + " valores");
     }
 
+   
     var melhorNota = students[0];
     for (var j = 1; j < students.length; j++) {
-        var nota = students[j];
-        if (nota > melhorNota.media) {
+        const nota = students[j];
+        if (nota.media > melhorNota.media) {
             melhorNota = students[j];
         }   
     }
     console.log("O melhor aluno tem o número "+melhorNota.numero+ " e média " + melhorNota.media);
     
+
+    var piorNota = students[0];
+    for (var u = 1; u < students.length; u++) {
+        const aluno = students[u];
+        if (aluno.media < piorNota.media) {
+            piorNota = students[u];
+        }   
+    }
+    console.log("O pior aluno tem o número "+piorNota.numero+ " e média " + piorNota.media);
+
 
     var countPositivas = 0;
     for (var k = 0; k < students.length; k++) {
@@ -139,7 +150,9 @@ function listaEstudantes(students){
         }
     
     }
-console.log("A turma tem "+ countNegativas + " positivas");
+    console.log("A turma tem "+ countNegativas + " negativas");
+
+
 
 }
 
