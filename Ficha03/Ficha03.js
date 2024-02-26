@@ -18,4 +18,4 @@ function performDownload(started, update, completed) {
     completed();
 }
 
-performDownload();
+performDownload(started, update, completed);
