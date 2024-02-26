@@ -20,3 +20,11 @@ function performDownload(started, update, completed) {
 
 performDownload(started, update, completed);
 
+var arrayUtils = require("./ArrayUtils.js");
+
+
+var array = [1,2,3,4,5,6,7,8,9,10];
+
+var index = arrayUtils.indexOf(array, 1);
+
+console.log(index);
