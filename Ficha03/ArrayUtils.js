@@ -57,6 +57,26 @@ module.exports = {
              sub.push(array[i]);          
         }
         return sub;
+    },
+
+    isSameLength: function (array, array2) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array2.length; j++) {
+                if (array.length == array2.length) {
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        }
+    },
+
+    reverse: function (array) {
+        var resultado = [];
+        for (let i = array.length -1; i >= 0 ; i--) {
+            resultado.push(array[i]);
+        }
+        return resultado;
     }
 }
 
