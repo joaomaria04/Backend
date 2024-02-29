@@ -77,6 +77,12 @@ module.exports = {
             resultado.push(array[i]);
         }
         return resultado;
+    },
+
+    swap: function (array, index1, index2) {
+        for (let i = 0; i < array.length; i++) {
+     
+        }
     }
 }
 

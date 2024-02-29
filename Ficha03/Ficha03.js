@@ -22,7 +22,6 @@ performDownload(started, update, completed);
 
 var arrayUtils = require("./ArrayUtils.js");
 
-
 var array = [1,2,3,4,5,6,7,8,9,10];
 
 var array2 = [11,12,13,14,15,16,17,18,19,20];
@@ -35,12 +34,17 @@ var sameLength = arrayUtils.isSameLength(array, array2);
 
 var reverseArray = arrayUtils.reverse(array);
 
+var swapElements = arrayUtils.swap(array, 1, 10);
+
 console.log(arrayUtils.isEmpty(array));
 
-console.log("A posição do indice é "+index);
+console.log("O indice está na posição "+index);
 
 console.log(subarray);
 
 console.log(sameLength);
 
 console.log(reverseArray);
+
+console.log(swapElements);
+
