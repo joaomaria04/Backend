@@ -1,0 +1,20 @@
+{
+  "person1": {
+    "id": 1,
+    "firstname": "João",
+    "lastname": "Ferreira",
+    "gender": "Male",
+    "age": 20,
+    "profession": "None"
+},
+
+"person2": {
+    "id": 2,
+    "firstname": "Juan",
+    "lastname": "Pablo",
+    "gender": "Male",
+    "age": 20,
+    "profession": "Teacher"
+}
+
+}
