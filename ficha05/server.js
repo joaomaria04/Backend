@@ -4,10 +4,12 @@ const port = 3000
 
 const fs = require('node:fs');
 
-var Persons = readFile("./persons.json");
-
 app.use(express.json());
 
+
+var Persons = readFile("./persons.json");
+
+console.log(Persons);
 
 function readFile(path){
     var content = fs.readFileSync(path);
