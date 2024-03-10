@@ -20,7 +20,22 @@ app.get('/users', (req, res) => {
   res.send(Persons);
 })
 
+app.get('/users/:id', (req, res) => {
+    var id = req.params.id;
+    res.send(req.body);
+  })
+
 app.post('/users', (req, res) => {
+    res.send(req.body);
+  })
+  
+app.delete('/users/:id', (req, res) => {
+    var id = req.params.id;
+    res.send(req.body);
+  })
+
+app.put('/users/:id', (req, res) => {
+    var id = req.params.id;
     res.send(req.body);
   })
   
