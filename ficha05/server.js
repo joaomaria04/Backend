@@ -37,7 +37,8 @@ app.post('/users', (req, res) => {
   
 app.delete('/users/:id', (req, res) => {
     var id = req.params.id;
-    res.send(req.body);
+    Persons.data.filter(function(){})
+    res.send("Foi apagado o utilizador com o id "+ id);
   })
 
 app.put('/users/:id', (req, res) => {
