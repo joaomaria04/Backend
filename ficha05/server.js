@@ -28,8 +28,11 @@ app.get('/users/:id', (req, res) => {
   })
 
 app.post('/users', (req, res) => {
-    var body = req.body;
-    res.send("This is a post!");
+    var newPerson = req.body;
+    var id = Persons.data.length + 1; //Para gerar um novo id
+    newPerson.id = id;
+    Persons.data.push(newPerson); //Através do body do Postman, adiciona ao array data
+    res.send("Foi inserido um utilizador com o id " + id);
   })
   
 app.delete('/users/:id', (req, res) => {
