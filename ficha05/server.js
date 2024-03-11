@@ -4,6 +4,7 @@ const port = 3000
 
 const fs = require('node:fs');
 
+// Utilização Middleware
 app.use(express.json());
 
 
@@ -22,11 +23,13 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
     var id = req.params.id;
+    
     res.send(req.body);
   })
 
 app.post('/users', (req, res) => {
-    res.send(req.body);
+    var body = req.body;
+    res.send("This is a post!");
   })
   
 app.delete('/users/:id', (req, res) => {
