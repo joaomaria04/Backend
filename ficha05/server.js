@@ -36,11 +36,13 @@ app.post('/users', (req, res) => {
   })
   
 app.delete('/users/:id', (req, res) => {
-    var id = req.params.id;
-    Persons.data.filter(function(){})
-    res.send("Foi apagado o utilizador com o id "+ id);
-  })
+  var id = req.params.id;
 
+  // Filter out the user with the specified ID
+  Persons.data = Persons.data.filter(data => data.id !== id); //Filtra o user, que é um nome aleatório dado e o parametro que queremos filtrar que é o id
+
+  res.send("Foi apagado o utilizador com o id " + id);
+});
 app.put('/users/:id', (req, res) => {
     var id = req.params.id;
     res.send(req.body);
