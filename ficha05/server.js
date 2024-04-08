@@ -23,8 +23,12 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
     var id = req.params.id;
-    
-    res.send(req.body);
+    for (let i = 0; i < Persons.data.length; i++) {
+      if (id > i){
+      var Person = Persons.data[i];
+      }
+    }
+    res.send(Person);
   })
 
 app.post('/users', (req, res) => {
@@ -36,7 +40,14 @@ app.post('/users', (req, res) => {
   })
   
 app.delete('/users/:id', (req, res) => {
+<<<<<<< Updated upstream
   var id = req.params.id;
+=======
+    var id = req.params.id;
+    Persons.data = Persons.data.filter((user) => user.id != id); //Persons.data serve para filtrar o objeto Persons
+    res.send("Foi apagado o utilizador com o id "+ id);
+  })
+>>>>>>> Stashed changes
 
   // Filter out the user with the specified ID
   Persons.data = Persons.data.filter(data => data.id !== id); //Filtra o user, que é um nome aleatório dado e o parametro que queremos filtrar que é o id
@@ -45,7 +56,18 @@ app.delete('/users/:id', (req, res) => {
 });
 app.put('/users/:id', (req, res) => {
     var id = req.params.id;
-    res.send(req.body);
+    var details = req.body;
+    var index = -1;
+    for (let i = 0; i < Persons.data.length; i++) {
+      if (id == Persons.data[i].id) {
+        index = i;
+      }
+    }
+    if (index != -1) {
+      details.id = id;
+      Persons.data[index] = details;
+    }
+    res.send("O user com o id " +id+" foi alterado com sucesso");
   })
   
 
