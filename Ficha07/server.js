@@ -8,13 +8,13 @@ const fs = require('node:fs');
 app.use(express.json());
 
 var mysql = require ('mysql');
-var pool = mysql.createPool({
+var connection = mysql.createPool({
   connectionLimit : 10,
   host : 'localhost',
   user : 'joao',
   password : 'backend',
   database : 'ficha07'
-})
+});
 
 app.get("/persons", (req, res)=>{
   connection.query("SELECT * FROM persons", function(error, results, fields){
@@ -24,10 +24,10 @@ app.get("/persons", (req, res)=>{
 });
 
 app.post("/persons", (req, res)=>{
-  var values = [req.body.firstname]
-  connection.query("insert into ficha7.persons(firstname, lastname, profession , age)", values, function(error, results, fields){
+  var values = [req.body.firstname, req.body.lastname, req.body.profession, req.body.age];
+  connection.query("insert into ficha7.persons(Firstname, Lastname, Profession , Age)", values, function(error, results, fields){
     if (error) throw error;
-    res.send(results);
+    res.send("Inserted with ID: " + results.insertId);
   });
 });
 
@@ -62,3 +62,19 @@ app.get("/persons/:Age/:Profession", (req, res)=>{
   });
 });
 
+app.put("/persons/:id", (req, res)=>{
+  var details = req.body;
+  var id = req.params.id;
+  var updateStatement = "UPDATE ficha07.persons SET Firstname = ?, Lastname = ?, Profession = ?, Age = ? WHERE id = ?";
+  var values = [details.firstname, details.lastname, details.profession, details.age, id];
+  connection.query(updateStatement, values, function(error, results, fields){
+    if (error) 
+      res.status(500).send(JSON.stringify(error));
+    else
+      res.send("Updated Rows: " + results.affectedRows);
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
