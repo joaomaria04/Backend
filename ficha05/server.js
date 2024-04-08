@@ -40,14 +40,7 @@ app.post('/users', (req, res) => {
   })
   
 app.delete('/users/:id', (req, res) => {
-<<<<<<< Updated upstream
   var id = req.params.id;
-=======
-    var id = req.params.id;
-    Persons.data = Persons.data.filter((user) => user.id != id); //Persons.data serve para filtrar o objeto Persons
-    res.send("Foi apagado o utilizador com o id "+ id);
-  })
->>>>>>> Stashed changes
 
   // Filter out the user with the specified ID
   Persons.data = Persons.data.filter(data => data.id !== id); //Filtra o user, que é um nome aleatório dado e o parametro que queremos filtrar que é o id
