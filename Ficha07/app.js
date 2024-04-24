@@ -1,18 +1,22 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger_output.json");
 
 const fs = require('node:fs');
 
 // Utilização Middleware
 app.use(express.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 
 var mysql = require ('mysql');
 var connection = mysql.createPool({
   connectionLimit : 10,
   host : 'localhost',
-  user : 'joao',
-  password : 'backend',
+  user : 'root',
+  password : '',
   database : 'ficha07'
 });
 

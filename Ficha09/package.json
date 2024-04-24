@@ -1,20 +1,19 @@
 {
-  "name": "ficha07",
+  "name": "ficha09",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "swagger-autogen": "node swagger.js"
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "express": "^4.19.2",
-    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.0"
-  },
-  "devDependencies": {
-    "swagger-autogen": "^2.23.7"
   }
 }
