@@ -81,6 +81,9 @@ app.post("/persons", (req, res) => {
   });
 });
 
+
+
+
 app.delete("/persons", (req, res) => {
   var id = req.body.id;
   Person.destroy({
@@ -93,11 +96,56 @@ app.delete("/persons", (req, res) => {
 });
 
 
-
+app.delete("/:id", (req, res) => {
+    const id = req.params.id;
+    Person.destroy({
+        where: {
+            id: id
+        }
+    }).then(person => {
+        res.send(person);
+    });
+});
 
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
