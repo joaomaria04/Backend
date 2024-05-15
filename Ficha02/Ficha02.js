@@ -17,10 +17,24 @@ function frase_inversa(frase) {
         stringReversa += " ";
     }
     return stringReversa;
-
 }
 
-//console.log(frase_inversa("Hoje é Domingo"));
+/**
+function frase_inversa(frase) {
+    var palavras = frase.split(" ");
+    var frase_inversa = "";
+    for(i = 0; i < palavras.length; i++){
+        var palavra = palavras[i];
+        for(j = palavra.length -1; j >= 0; j--){
+            frase_inversa += palavra[j];
+        }
+        frase_inversa += " ";
+    }
+    return frase_inversa;
+}
+**/
+
+console.log(frase_inversa("Hoje é Domingo"));
 
 function vogais(frase) {
     var contador = 0;
@@ -135,7 +149,7 @@ function listaEstudantes(students){
 
     var countPositivas = 0;
     for (var k = 0; k < students.length; k++) {
-        if (students[k].media > 9.5) {
+        if (students[k].media >= 9.5) {
             countPositivas++;
         }
     

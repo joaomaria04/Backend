@@ -67,3 +67,62 @@ app.put('/users/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+let square = width => {
+  let square = "";
+
+  // primeira linha
+  for(i = 0; i < width; i++) {
+      square += "*";
+  }
+  square += "\n";
+  
+  // linhas do meio
+  for(i = 0; i < width-2; i++) {
+      square += "*";
+      for(j = 0; j < width-2; j++) {
+          square += " ";
+      }
+      square += "*\n";
+  }
+  
+  // ultima linha
+  for(i = 0; i < width; i++) {
+      square += "*";
+  }
+  return square;
+}
+
+
+var result = ""
+for(i = 0; i <= width; i++) {
+  for(j = 0; j <= width; j++) {
+    if(i == 0 || j == 0 || j == width || i == width || i == j || i+j == width || i == width/2 || j == width/2) {
+      result += "*"
+    } else {
+      result += " "
+    }
+  }
+  result += "\n";
+}
+
+/*
+i
+*****
+1*111
+22*22
+333*3
+*****
+
+j 
+**23*
+*1*3*
+*12**
+
+
+1 + 3 = 4
+2 + 2 = 4
+3 + 1 = 4
+
+*/

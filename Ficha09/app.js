@@ -82,7 +82,7 @@ app.post("/persons", (req, res) => {
 });
 
 app.delete("/persons", (req, res) => {
-  var id = req.body.id;
+  const id = req.body.id;
   Person.destroy({
      where: {
        id: id 
@@ -93,8 +93,48 @@ app.delete("/persons", (req, res) => {
 });
 
 
+app.delete("/persons/:id", (req, res) => {
+    var id = req.params.id;
+    Person.destroy({
+        where: {
+            id: id
+        }
+    }).then(deletePerson => {
+        res.send(deletePerson);
+    });
+});
 
+app.get("/persons/:id", (req, res) => {
+    var id = req.params.id;
+    Person.findByPk(id).then(allPersons => {
+        res.send(allPersons);
+    });
+});
 
+app.get("/persons/:age/:profession", (req, res) => {
+    var age = req.params.age;
+    var profession = req.params.profession;
+    Person.findAll({
+        where: {
+            age: age,
+            profession: profession 
+        }
+    }).then(persons =>{
+        res.send(persons);
+    });
+});
+
+app.put("/persons/:id", (req, res) => {
+    var id = req.params.id;
+    var body = req.body;
+    Person.update({ body  }, {
+        where: {
+            id: id
+        }
+    }).then((updatePerson) => {
+        res.send(updatePerson);
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -10,25 +10,23 @@ module.exports = {
     max: function(array) {
         var maximoArray = array[0];
         for (var i = 1; i < array.length; i++) {
-        var numero = array[i];
-        if (numero > maximoArray) {
-            maximoArray = array[i];
-        }   
-    }
-      return maximoArray;
-    
+            var numero = array[i];
+            if (numero > maximoArray) {
+                maximoArray = array[i];
+            }   
+        }
+        return maximoArray;
     },
 
     min: function(array) {
         var minimoArray = array[0];
         for (var i = 1; i < array.length; i++) {
-        var numero = array[i];
-        if (numero < minimoArray) {
-            minimoArray = array[i];
-        }   
-    }
-      return minimoArray;
-    
+            var numero = array[i];
+            if (numero < minimoArray) {
+                minimoArray = array[i];
+            }   
+        }
+        return minimoArray;
     },
 
     average: function(array) {
@@ -37,18 +35,17 @@ module.exports = {
             var element = array[i];
             somaArray += element;            
         }
-    var avg = somaArray / array.length;
-    return avg;
+        var avg = somaArray / array.length;
+        return avg;
     },
 
     indexOf: function (array, value) {
-        var index = -1;
         for (var i = 0; i < array.length; i++) {
             if (array[i] == value) {
-                index = i;
+                return i;
             }
         }
-        return index;
+        return -1;
     },
 
     subArray: function (array, startIndex, endIndex) {
@@ -60,15 +57,7 @@ module.exports = {
     },
 
     isSameLength: function (array, array2) {
-        for (let i = 0; i < array.length; i++) {
-            for (let j = 0; j < array2.length; j++) {
-                if (array.length == array2.length) {
-                    return true;
-                }else {
-                    return false;
-                }
-            }
-        }
+        return array.length == array2.length;
     },
 
     reverse: function (array) {
@@ -80,9 +69,13 @@ module.exports = {
     },
 
     swap: function (array, index1, index2) {
-        for (let i = 0; i < array.length; i++) {
-     
-        }
+        var value1 = array[index1];
+        var value2 = array[index2];
+
+        array[index1] = value2;
+        array[index2] = value1;
+
+        return array;
     }
 }
 
