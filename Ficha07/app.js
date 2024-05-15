@@ -20,7 +20,11 @@ var connection = mysql.createPool({
   database : 'ficha07'
 });
 
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> 7ff0e4528d41d2b66897d64951e2041ef0c0cea4
 
 app.get("/persons", (req, res)=>{
   connection.query("SELECT * FROM persons", function(error, results, fields){
@@ -56,7 +60,11 @@ app.delete("/persons/:id", (req, res)=>{
 
 app.get("/persons/:id", (req, res)=>{
   var id = req.params.id;
+<<<<<<< HEAD
   connection.query("SELECT * FROM persons WHERE id = ? ", [id], function(error, results, fields){
+=======
+  connection.query("SELECT * FROM persons WHERE id = ? ",[id], function(error, results, fields){
+>>>>>>> 7ff0e4528d41d2b66897d64951e2041ef0c0cea4
     if (error) throw error;
     res.send(results);
   });
@@ -81,7 +89,10 @@ app.put("/persons/:id", (req, res)=>{
   });
 });
 
+<<<<<<< HEAD
 */
+=======
+>>>>>>> 7ff0e4528d41d2b66897d64951e2041ef0c0cea4
 
 
 

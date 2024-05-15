@@ -11,9 +11,27 @@ const { Sequelize } = require('sequelize');
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
+
+/*
+
+
 const sequelize = new Sequelize('ficha09', 'root', '', {
     dialect: 'mysql'
 });
+
+
+*/ 
+
+
+var mysql = require ('mysql2');
+var connection = mysql.createPool({
+  connectionLimit : 10,
+  host : 'localhost',
+  user : 'root',
+  password : '',
+  database : 'ficha09'
+});
+
 
 sequelize.authenticate()
     .then(() => {
@@ -52,6 +70,9 @@ sequelize.sync({ force: false })
         console.log(persons);
     });
 
+
+
+
 /*
 
 Person.bulkCreate([
@@ -65,6 +86,11 @@ Person.bulkCreate([
 });   
     
 */
+
+
+
+/*
+
 
 app.get("/persons", (req, res)=>{
   
@@ -81,6 +107,9 @@ app.post("/persons", (req, res) => {
   });
 });
 
+
+
+
 app.delete("/persons", (req, res) => {
   const id = req.body.id;
   Person.destroy({
@@ -93,16 +122,31 @@ app.delete("/persons", (req, res) => {
 });
 
 
+<<<<<<< HEAD
 app.delete("/persons/:id", (req, res) => {
     var id = req.params.id;
+=======
+app.delete("/:id", (req, res) => {
+    const id = req.params.id;
+>>>>>>> 7ff0e4528d41d2b66897d64951e2041ef0c0cea4
     Person.destroy({
         where: {
             id: id
         }
+<<<<<<< HEAD
     }).then(deletePerson => {
         res.send(deletePerson);
     });
 });
+=======
+    }).then(person => {
+        res.send(person);
+    });
+});
+
+
+*/
+>>>>>>> 7ff0e4528d41d2b66897d64951e2041ef0c0cea4
 
 app.get("/persons/:id", (req, res) => {
     var id = req.params.id;
@@ -139,5 +183,37 @@ app.put("/persons/:id", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
