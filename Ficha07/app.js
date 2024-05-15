@@ -20,6 +20,8 @@ var connection = mysql.createPool({
   database : 'ficha07'
 });
 
+
+
 app.get("/persons", (req, res)=>{
   connection.query("SELECT * FROM persons", function(error, results, fields){
     if (error) throw error;
@@ -53,7 +55,8 @@ app.delete("/persons/:id", (req, res)=>{
 })
 
 app.get("/persons/:id", (req, res)=>{
-  connection.query("SELECT * FROM persons WHERE id = ? ", function(error, results, fields){
+  var id = req.params.id;
+  connection.query("SELECT * FROM persons WHERE id = ? ",[id], function(error, results, fields){
     if (error) throw error;
     res.send(results);
   });
@@ -78,6 +81,9 @@ app.put("/persons/:id", (req, res)=>{
       res.send("Updated Rows: " + results.affectedRows);
   });
 });
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -11,9 +11,27 @@ const { Sequelize } = require('sequelize');
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
+
+/*
+
+
 const sequelize = new Sequelize('ficha09', 'root', '', {
     dialect: 'mysql'
 });
+
+
+*/ 
+
+
+var mysql = require ('mysql2');
+var connection = mysql.createPool({
+  connectionLimit : 10,
+  host : 'localhost',
+  user : 'root',
+  password : '',
+  database : 'ficha09'
+});
+
 
 sequelize.authenticate()
     .then(() => {
@@ -52,6 +70,9 @@ sequelize.sync({ force: false })
         console.log(persons);
     });
 
+
+
+
 /*
 
 Person.bulkCreate([
@@ -65,6 +86,11 @@ Person.bulkCreate([
 });   
     
 */
+
+
+
+/*
+
 
 app.get("/persons", (req, res)=>{
   
@@ -108,13 +134,13 @@ app.delete("/:id", (req, res) => {
 });
 
 
+*/
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-
-
-
 
 
 
